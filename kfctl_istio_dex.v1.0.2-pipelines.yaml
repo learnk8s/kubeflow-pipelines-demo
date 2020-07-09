@@ -1,9 +1,7 @@
 apiVersion: kfdef.apps.kubeflow.org/v1
 kind: KfDef
 metadata:
-  annotations:
-    kfctl.kubeflow.io/force-delete: "false"
-  clusterName: lke7189
+  clusterName: lke7262
   creationTimestamp: null
   name: kf1.0
   namespace: kubeflow
@@ -167,13 +165,6 @@ spec:
     name: jupyter-web-app
   - kustomizeConfig:
       overlays:
-      - application
-      repoRef:
-        name: manifests
-        path: spark/spark-operator
-    name: spark-operator
-  - kustomizeConfig:
-      overlays:
       - istio
       - application
       - db
@@ -189,102 +180,6 @@ spec:
         name: manifests
         path: jupyter/notebook-controller
     name: notebook-controller
-  - kustomizeConfig:
-      overlays:
-      - application
-      repoRef:
-        name: manifests
-        path: pytorch-job/pytorch-job-crds
-    name: pytorch-job-crds
-  - kustomizeConfig:
-      overlays:
-      - application
-      repoRef:
-        name: manifests
-        path: pytorch-job/pytorch-operator
-    name: pytorch-operator
-  - kustomizeConfig:
-      overlays:
-      - application
-      parameters:
-      - name: namespace
-        value: knative-serving
-      repoRef:
-        name: manifests
-        path: knative/knative-serving-crds
-    name: knative-crds
-  - kustomizeConfig:
-      overlays:
-      - application
-      parameters:
-      - name: namespace
-        value: knative-serving
-      repoRef:
-        name: manifests
-        path: knative/knative-serving-install
-    name: knative-install
-  - kustomizeConfig:
-      overlays:
-      - application
-      repoRef:
-        name: manifests
-        path: kfserving/kfserving-crds
-    name: kfserving-crds
-  - kustomizeConfig:
-      overlays:
-      - application
-      repoRef:
-        name: manifests
-        path: kfserving/kfserving-install
-    name: kfserving-install
-  - kustomizeConfig:
-      overlays:
-      - application
-      parameters:
-      - name: usageId
-        value: <randomly-generated-id>
-      - name: reportUsage
-        value: "true"
-      repoRef:
-        name: manifests
-        path: common/spartakus
-    name: spartakus
-  - kustomizeConfig:
-      overlays:
-      - istio
-      repoRef:
-        name: manifests
-        path: tensorboard
-    name: tensorboard
-  - kustomizeConfig:
-      overlays:
-      - application
-      repoRef:
-        name: manifests
-        path: tf-training/tf-job-crds
-    name: tf-job-crds
-  - kustomizeConfig:
-      overlays:
-      - application
-      repoRef:
-        name: manifests
-        path: tf-training/tf-job-operator
-    name: tf-job-operator
-  - kustomizeConfig:
-      overlays:
-      - application
-      repoRef:
-        name: manifests
-        path: katib/katib-crds
-    name: katib-crds
-  - kustomizeConfig:
-      overlays:
-      - application
-      - istio
-      repoRef:
-        name: manifests
-        path: katib/katib-controller
-    name: katib-controller
   - kustomizeConfig:
       overlays:
       - application
@@ -366,13 +261,6 @@ spec:
         name: manifests
         path: profiles
     name: profiles
-  - kustomizeConfig:
-      overlays:
-      - application
-      repoRef:
-        name: manifests
-        path: seldon/seldon-core-operator
-    name: seldon-core-operator
   repos:
   - name: manifests
     uri: https://github.com/kubeflow/manifests/archive/v1.0.2.tar.gz
