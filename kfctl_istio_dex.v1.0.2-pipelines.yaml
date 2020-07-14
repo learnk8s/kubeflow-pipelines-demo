@@ -1,8 +1,6 @@
 apiVersion: kfdef.apps.kubeflow.org/v1
 kind: KfDef
 metadata:
-  clusterName: lke7262
-  creationTimestamp: null
   name: kf1.0
   namespace: kubeflow
 spec:
