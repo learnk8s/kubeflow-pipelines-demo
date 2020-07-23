@@ -13,3 +13,11 @@ In the terminal, run the following command:
 Once cloned, if you switch back to the notebook, you will see `kubeflow-pipelines-demo` folder which will include the `KF_MNIST.ipynb` notebook.
 
 At the end of the execution of the notebook, in Kubeflow dashboard, navigate to `Pipelines` -> `Experiments` and you should see the experiment that notebook just created in the pipelines.
+
+
+## Example Pipelines
+
+If you would like to look at some sample pipelines check out the following repos:
+
+- [CloudXLR8R Sample Pipelines](https://github.com/CloudXLR8R/kubeflow-sample-pipelines)
+- [Kubeflow Pipelines](https://github.com/kubeflow/pipelines)
