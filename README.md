@@ -2,6 +2,7 @@
 
 The `KF_MNIST.ipynb` notebook is designed to show [Kubeflow Pipelines](https://www.kubeflow.org/docs/pipelines/overview/pipelines-overview/) functionality.
 
+You can run this notebook in [MiniKF](https://www.kubeflow.org/docs/started/workstation/getting-started-minikf/) on your local machine.
 Instructions on how to install Kubeflow on a Kubernetes cluster can be found [here](https://www.linode.com/docs/kubernetes/how-to-deploy-kubeflow-on-linode-kubernetes-engine/). This resource also includes instructions on creating Jupyter Notebooks. 
 
 Once Kubeflow is installed, [create a Notebook](https://www.kubeflow.org/docs/notebooks/setup/). Once your notebook is ready, you should be able to clone the current repository by opening it and navigating to `New` -> `Terminal`. 
